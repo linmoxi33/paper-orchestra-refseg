@@ -73,6 +73,16 @@ class CollapseTest(unittest.TestCase):
         self.assertEqual(report["upstream_segments"], 1)
         self.assertEqual(report["verdict"], "collapsed")
 
+    def test_bibtex_entries_collapse_to_one_segment(self):
+        raw = ("@String(CVPR = {CVPR})\n"
+               "@article{he2016resnet, title={Deep residual learning}, year={2016}}\n"
+               "@inproceedings{kingma2015adam, title={Adam}, year={2015}}\n")
+        report = refseg.audit(raw)
+        self.assertEqual(report["style"], "bibtex")
+        self.assertEqual(report["real_entries"], 2)
+        self.assertEqual(report["upstream_segments"], 1)
+        self.assertEqual(report["verdict"], "collapsed")
+
     def test_bibitem_keys_are_extracted(self):
         _style, entries = refseg.parse_entries((SAMPLES / "04_bibitem.tex").read_text())
         self.assertEqual([e["key"] for e in entries], ["he2016resnet", "kingma2015adam"])

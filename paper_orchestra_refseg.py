@@ -25,6 +25,9 @@ UPSTREAM_PATTERN = r"\[\d+\]"
 BRACKET_LINE = re.compile(r"(?m)^\s*\[\s*(\d{1,3})\s*\]")
 DOT_LINE = re.compile(r"(?m)^\s*(\d{1,3})[.)]\s+")
 BIBITEM = re.compile(r"\\bibitem(?:\[[^\]]*\])?\{([^}]*)\}")
+BIBTEX = re.compile(
+    r"(?m)^\s*@(?:article|inproceedings|incollection|book|booklet|manual|"
+    r"mastersthesis|misc|phdthesis|proceedings|techreport|unpublished)\s*\{\s*([^,\s]+)\s*,")
 BRACKET_ANY = re.compile(r"\[\s*(\d{1,3})\s*\]")
 
 
@@ -42,6 +45,8 @@ def upstream_segments(raw):
 def detect_style(raw):
     if BIBITEM.search(raw):
         return "bibitem"
+    if BIBTEX.search(raw):
+        return "bibtex"
     bracket_lines = BRACKET_LINE.findall(raw)
     if bracket_lines:
         return "bracket-sequential"
@@ -76,6 +81,9 @@ def parse_entries(raw):
         return style, _slice(raw, ms, lambda i, m: int(m.group(1)))
     if style == "bibitem":
         ms = list(BIBITEM.finditer(raw))
+        return style, _slice(raw, ms, lambda i, m: i + 1, lambda m: m.group(1))
+    if style == "bibtex":
+        ms = list(BIBTEX.finditer(raw))
         return style, _slice(raw, ms, lambda i, m: i + 1, lambda m: m.group(1))
     return style, [{"num": 1, "body": raw.strip(), "key": None}]
 

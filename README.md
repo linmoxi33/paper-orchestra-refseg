@@ -82,7 +82,7 @@ Run the tests:
 python3 -m unittest discover -s tests -v
 ```
 
-Measured on this repository (2026-11-18): **15 tests, 15 passed, 0 failed, 0 skipped**. The four `examples/in/` fixtures produce: clean 4→4; header 4 segments vs 3 real with drift −1 on all; `1.` style 1 segment vs 3 real; `\bibitem` 1 segment vs 2 real.
+Measured on this repository (2026-11-18): **16 tests, 16 passed, 0 failed, 0 skipped**. The four `examples/in/` fixtures produce: clean 4→4; header 4 segments vs 3 real with drift −1 on all; `1.` style 1 segment vs 3 real; `\bibitem` 1 segment vs 2 real. On the upstream repository's own `templates/cvpr2025/references.bib` (6 entries, fetched from `d9bae99`), the tool reports style `bibtex`, 1 upstream segment, 5 entries never shown to the LLM.
 
 ## 局限
 
@@ -93,7 +93,7 @@ Measured on this repository (2026-11-18): **15 tests, 15 passed, 0 failed, 0 ski
 
 ## 本轮创新
 
-First offline test of PaperOrchestra's **own** citation-F1 autorater's reference segmentation. Prior MCP/AG-UI work in this series audited contracts and traces; the ledger has no entry that replays an upstream evaluator's numbering and quantifies the resulting permutation. New, verifiable conclusion: a `References` header shifts every P0/P1 label by one, and `1.`/`\bibitem` styles collapse the whole bibliography into a single "reference" — both directly readable from the upstream code and reproducible in 0.3 s with the 15 tests here. Not a re-skin of a linter: it emits the synthetic→real permutation the scorer actually uses.
+First offline test of PaperOrchestra's **own** citation-F1 autorater's reference segmentation. Prior MCP/AG-UI work in this series audited contracts and traces; the ledger has no entry that replays an upstream evaluator's numbering and quantifies the resulting permutation. New, verifiable conclusion: a `References` header shifts every P0/P1 label by one, and `1.`/`\bibitem` styles collapse the whole bibliography into a single "reference" — both directly readable from the upstream code and reproducible in 0.3 s with the 16 tests here. Not a re-skin of a linter: it emits the synthetic→real permutation the scorer actually uses.
 
 ## 与同类项目的差异
 
