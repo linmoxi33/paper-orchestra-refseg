@@ -1,0 +1,29 @@
+{
+  "file": "examples/in/04_bibitem.tex",
+  "style": "bibitem",
+  "upstream_segments": 1,
+  "real_entries": 2,
+  "mapping": [
+    {
+      "synthetic": 1,
+      "real": 1,
+      "drift": 0,
+      "preview": "\\bibitem{he2016resnet} K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recogni"
+    }
+  ],
+  "phantom_segments": [],
+  "missed_entries": [
+    {
+      "real": 2,
+      "preview": "D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. In ICLR, 2015."
+    }
+  ],
+  "max_abs_drift": 0,
+  "verdict": "collapsed",
+  "clean": false,
+  "exit_code": 1,
+  "notes": [
+    "upstream only splits on '[' + digits + ']'; style 'bibitem' is not split, so 2 real entries become 1 segment(s)",
+    "1 real entries are never shown to the priority LLM"
+  ]
+}

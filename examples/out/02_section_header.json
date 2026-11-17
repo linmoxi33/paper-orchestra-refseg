@@ -1,0 +1,44 @@
+{
+  "file": "examples/in/02_section_header.txt",
+  "style": "bracket-sequential",
+  "upstream_segments": 4,
+  "real_entries": 3,
+  "mapping": [
+    {
+      "synthetic": 1,
+      "real": null,
+      "drift": null,
+      "preview": "References"
+    },
+    {
+      "synthetic": 2,
+      "real": 1,
+      "drift": -1,
+      "preview": "K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In CVPR, 2016."
+    },
+    {
+      "synthetic": 3,
+      "real": 2,
+      "drift": -1,
+      "preview": "D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. In ICLR, 2015."
+    },
+    {
+      "synthetic": 4,
+      "real": 3,
+      "drift": -1,
+      "preview": "J. Ho, A. Jain, and P. Abbeel. Denoising diffusion probabilistic models. In NeurIPS, 2020."
+    }
+  ],
+  "phantom_segments": [
+    "References"
+  ],
+  "missed_entries": [],
+  "max_abs_drift": 1,
+  "verdict": "misnumbered",
+  "clean": false,
+  "exit_code": 1,
+  "notes": [
+    "1 upstream segment(s) match no real entry (phantom, e.g. section header)",
+    "synthetic index -> real reference number drifts by [-1]"
+  ]
+}

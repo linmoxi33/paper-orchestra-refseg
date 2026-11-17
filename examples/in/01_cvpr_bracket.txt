@@ -1,0 +1,4 @@
+[1] K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In CVPR, 2016.
+[2] D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. In ICLR, 2015.
+[3] A. Dosovitskiy et al. An image is worth 16x16 words: Transformers for image recognition at scale. In ICLR, 2021.
+[4] A. Radford et al. Learning transferable visual models from natural language supervision. In ICML, 2021.

@@ -1,0 +1,9 @@
+file: examples/in/02_section_header.txt
+style: bracket-sequential | upstream segments: 4 | real entries: 3
+verdict: misnumbered (max |drift| = 1)
+  synth[1] -> real PHANTOM  References
+  synth[2] -> real 1  drift=-1  K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image 
+  synth[3] -> real 2  drift=-1  D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. In
+  synth[4] -> real 3  drift=-1  J. Ho, A. Jain, and P. Abbeel. Denoising diffusion probabilistic model
+note: 1 upstream segment(s) match no real entry (phantom, e.g. section header)
+note: synthetic index -> real reference number drifts by [-1]

@@ -1,0 +1,39 @@
+{
+  "file": "examples/in/01_cvpr_bracket.txt",
+  "style": "bracket-sequential",
+  "upstream_segments": 4,
+  "real_entries": 4,
+  "mapping": [
+    {
+      "synthetic": 1,
+      "real": 1,
+      "drift": 0,
+      "preview": "K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In CVPR, 2016."
+    },
+    {
+      "synthetic": 2,
+      "real": 2,
+      "drift": 0,
+      "preview": "D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. In ICLR, 2015."
+    },
+    {
+      "synthetic": 3,
+      "real": 3,
+      "drift": 0,
+      "preview": "A. Dosovitskiy et al. An image is worth 16x16 words: Transformers for image recognition at scale. In"
+    },
+    {
+      "synthetic": 4,
+      "real": 4,
+      "drift": 0,
+      "preview": "A. Radford et al. Learning transferable visual models from natural language supervision. In ICML, 20"
+    }
+  ],
+  "phantom_segments": [],
+  "missed_entries": [],
+  "max_abs_drift": 0,
+  "verdict": "clean",
+  "clean": true,
+  "exit_code": 0,
+  "notes": []
+}
